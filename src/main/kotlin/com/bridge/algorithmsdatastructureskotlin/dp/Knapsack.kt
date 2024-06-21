@@ -8,7 +8,7 @@ class Knapsack {
     private lateinit var dp: Array<Array<Int>>
 
     fun solve(items: Array<KnapsackItem>, maximumKnapsackWeightCapacity: Int): Int {
-        dp = Array(items.size + 1) { Array(maximumKnapsackWeightCapacity + 1) { 0 } }
+        dp = Array(items.size + 1) { Array(maximumKnapsackWeightCapacity + 1) { -1 } }
         return solveRecursive(items, maximumKnapsackWeightCapacity, 0)
     }
 
