@@ -17,8 +17,10 @@ class CoinChange {
     private fun solveRecursive(coins: IntArray, amount: Int): Int {
         when {
 
+            // The coin is selected and makes the amount zero
             amount == 0 -> return 0
 
+            // The selected coin makes the amount negative
             amount < 0 -> return Int.MAX_VALUE
 
             dp[amount] != -1 -> return dp[amount]
@@ -27,7 +29,9 @@ class CoinChange {
                 var minCoins = Int.MAX_VALUE
                 for (coin in coins) {
                     val result = solveRecursive(coins, amount - coin)
+                    // To prevent comparing Int.MAX_VALUE with Int.MAX_VALUE
                     if (result < minCoins) {
+                        // If one more of the coin is selected the minimum is changed
                         minCoins = min(minCoins, result + 1)
                     }
                 }
