@@ -1,6 +1,5 @@
-package com.bridge.algorithmsdatastructureskotlin.dp
+package com.bridge.algorithmsdatastructureskotlin.dp.knapsack
 
-import com.bridge.algorithmsdatastructureskotlin.dp.knapsack.KnapsackItem
 import io.kotest.matchers.shouldBe
 import org.junit.jupiter.api.Test
 

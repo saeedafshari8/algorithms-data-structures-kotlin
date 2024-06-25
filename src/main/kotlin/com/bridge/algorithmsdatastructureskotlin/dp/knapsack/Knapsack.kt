@@ -1,14 +1,13 @@
-package com.bridge.algorithmsdatastructureskotlin.dp
+package com.bridge.algorithmsdatastructureskotlin.dp.knapsack
 
-import com.bridge.algorithmsdatastructureskotlin.dp.knapsack.KnapsackItem
 import kotlin.math.max
 
 class Knapsack {
 
-    private lateinit var dp: Array<Array<Int>>
+    private lateinit var dp: Array<IntArray>
 
     fun solve(items: Array<KnapsackItem>, maximumKnapsackWeightCapacity: Int): Int {
-        dp = Array(items.size + 1) { Array(maximumKnapsackWeightCapacity + 1) { -1 } }
+        dp = Array(items.size + 1) { IntArray(maximumKnapsackWeightCapacity + 1) { -1 } }
         return solveRecursive(items, maximumKnapsackWeightCapacity, 0)
     }
 
